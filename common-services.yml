@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+    php:
+        build:
+            context: .
+            dockerfile: .docker/php/Dockerfile
+            args:
+                - DOCKER_UID_GID=${DOCKER_UID_GID}
+                - ENABLE_XDEBUG=${ENABLE_XDEBUG}
+                - APP_DIR=${APP_DIR}
+        environment:
+            PHP_IDE_CONFIG: "serverName=${APP_DOMAIN_NAME}"
+        restart: unless-stopped
+        tty: true
+
+    mysql:
+        image: mysql:9.0.1
+        environment:
+            - MYSQL_DATABASE=${DB_DATABASE}
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+        ports:
+            - "${DB_PORT}:${DB_PORT}"
+        restart: always
+
+    redis:
+        image: redis:7.4.1-alpine
+        ports:
+            - "${REDIS_PORT}:${REDIS_PORT}"
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+        restart: unless-stopped

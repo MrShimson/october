@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+docker-compose exec --user $(id -u):$(id -g) october php artisan "$@"

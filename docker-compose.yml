@@ -1,0 +1,42 @@
+services:
+
+    october:
+        extends:
+            file: common-services.yml
+            service: php
+        container_name: october
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./:/app:delegated
+        networks:
+            - october-network
+
+    mysql:
+        container_name: mysql-october
+        extends:
+            file: common-services.yml
+            service: mysql
+        volumes:
+            - mysql-october:/var/lib/mysql
+            - ./.docker/mysql/init:/docker-entrypoint-initdb.d
+        networks:
+            - october-network
+
+    redis:
+        container_name: redis-october
+        extends:
+            file: common-services.yml
+            service: redis
+        networks:
+            - october-network
+
+networks:
+    october-network:
+        external: true
+
+volumes:
+    mysql-october:
+        driver: local
