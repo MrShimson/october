@@ -5,6 +5,7 @@ init:
 	make install
 install:
 	./bin/composer install -o -a
+	./bin/artisan october:migrate
 up:
 	docker-compose -f docker-compose.yml up -d --build
 down:
