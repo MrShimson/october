@@ -7,10 +7,24 @@ services:
         container_name: october
         extra_hosts:
             - "host.docker.internal:host-gateway"
-        ports:
-            - "8000:8000"
+            - "october.local:host-gateway"
+        expose:
+            - "9000"
         volumes:
-            - ./:/app:delegated
+            - ./:/var/www/app:delegated
+        networks:
+            - october-network
+
+    nginx-october:
+        image: nginx
+        container_name: nginx-october
+        volumes:
+            - ./:/var/www/app:ro
+            - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - "80:80"
+        depends_on:
+            - october
         networks:
             - october-network
 

@@ -1,7 +1,8 @@
-FROM php:8.3.13-alpine3.20
+FROM php:8.3.12-fpm-alpine3.20
 
 ARG DOCKER_UID_GID
 ARG ENABLE_XDEBUG
+ARG SETTINGS_CHECK_KEY
 ARG APP_DIR
 
 ### Install PHP extensions
@@ -34,8 +35,10 @@ RUN if [[ ${ENABLE_XDEBUG} = "0" ]] ; then \
     echo ENABLE_XDEBUG = $ENABLE_XDEBUG \
     ; fi
 
-### Add user
 RUN adduser -S -s /bin/bash -u $DOCKER_UID_GID -D -h /home/appuser appuser
+RUN sed -i -e 's/^user =.*/user = appuser/' /usr/local/etc/php-fpm.d/www.conf
+RUN sed -i -e "s/^;pm.status_path =.*/pm\.status_path = \/php-fpm\/${SETTINGS_CHECK_KEY}/" /usr/local/etc/php-fpm.d/www.conf
+
 USER $DOCKER_UID_GID:$DOCKER_UID_GID
 
 ### Run app

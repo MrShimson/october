@@ -9,6 +9,7 @@ services:
             args:
                 - DOCKER_UID_GID=${DOCKER_UID_GID}
                 - ENABLE_XDEBUG=${ENABLE_XDEBUG}
+                - SETTINGS_CHECK_KEY=${SETTINGS_CHECK_KEY}
                 - APP_DIR=${APP_DIR}
         environment:
             PHP_IDE_CONFIG: "serverName=${APP_DOMAIN_NAME}"
