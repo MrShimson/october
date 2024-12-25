@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'NAMU';
+    font-style: normal;
+    font-weight: 400;
+    src: local('NAMU-1400'), url('/themes/demo/assets/fonts/Namu/NAMU-1400.ttf') format('truetype');
+    font-display: swap;
+}

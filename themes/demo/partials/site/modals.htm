@@ -1,0 +1,54 @@
+<div id="request-modal" class="modal fade default-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <span class="text-primary">ЗАПИСЬ НА</span><br>
+                    <span class="text-secondary">ПРОБНОЕ ЗАНЯТИЕ</span>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form id="lead-form" class="lead-form" action="" method="post">
+                    <div class="form-group">
+                        <label class="default-label" for="request-name">Имя</label>
+                        <input id="request-name" type="text" name="name" class="default-input"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="default-label" for="request-phone">Телефон</label>
+                        <input id="request-phone" type="tel" name="phone" class="default-input"/>
+                    </div>
+                    <div class="form-group mb-4">
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input mb-1 privacy-check" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label ms-2" for="flexCheckDefault">
+                                Я даю согласие на обработку моих персональных данных
+                            </label>
+                        </div>
+                    </div>
+                    <button class="button button-yellow w-100" type="submit">Записаться</button>
+                    <div class="form-text my-3">Мы свяжемся с Вами в течение часа</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="success-modal" class="modal fade default-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    Спасибо за заявку!
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="fs-6 fw-semibold text-center mb-4">Мы свяжемся с Вами в течение часа</div>
+                <button class="button button-yellow mx-auto d-flex" type="button" data-bs-dismiss="modal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

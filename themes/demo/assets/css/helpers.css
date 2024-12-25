@@ -1,0 +1,46 @@
+.font-namu {
+    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
+.text-yellow {
+    color: var(--yellow) !important;
+}
+
+.text-wheat {
+    color: var(--wheat) !important;
+}
+
+.background-primary {
+    background-color: var(--primary);
+}
+
+.background-secondary {
+    background-color: var(--secondary);
+}
+
+.background-wheat {
+    background-color: var(--wheat);
+}
+
+.background-yellow {
+    background-color: var(--yellow);
+}
+
+.is-invalid {
+    border-color: var(--bs-danger) !important;
+}
+
+@media screen and (min-width: 768px) {
+    .w-md-auto {
+        width: auto !important;
+    }
+}
+

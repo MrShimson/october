@@ -1,24 +1,36 @@
-<!-- Nav -->
-{% placeholder headerBefore %}
-<nav id="layout-nav" class="navbar navbar-expand-lg navbar-dark">
-    <div class="navbar-container container">
-        <a class="navbar-brand" href="{{ 'index'|page }}">
-            <img src="{{ 'assets/images/logo.svg'|theme }}" alt="October CMS Demo" width="230" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                {% partial 'site/nav-links' %}
-            </ul>
+<header id="header" class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="logo">
+                <img src="{{ 'assets/images/logo.png'|theme }}" width="100" height="100" alt="Логотип"/>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="/#courses">О нас</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="/news">Новости</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="/#directions">Методика</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="/#costs">Занятия и цены</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="/#photo-gallery">Фотогалерея</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="/#map">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="phone mx-3" href="tel:+74991517862">+7&nbsp;(499)&nbsp;151-78-62</a>
+            <div class="d-flex align-items-center">
+                <a class="phone-icon" href="tel:+74991517862"></a>
+                <button type="button" class="burger-icon ms-2"></button>
+            </div>
         </div>
     </div>
-</nav>
-<div id="layout-nav-decorations">
-    <div class="navbar-decorations container">
-        <div class="navbar-decoration-1"></div>
-        <div class="navbar-decoration-2"></div>
-    </div>
-</div>
-{% placeholder headerAfter %}
+</header>

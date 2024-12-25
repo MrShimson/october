@@ -1,0 +1,42 @@
+<section id="contacts" class="contacts">
+    <div class="container mb-4 md-md-5">
+        <div class="contacts__title mb-4 md-md-5">
+            <div class="contacts__title-accent" data-aos="fade-up">Запишитесь</div>
+            <div data-aos="fade-up">на пробное занятие</div>
+            <img class="contacts__title-present d-none b-md-block" src="{{ 'assets/images/present.png'|theme }}" width="270"
+                 height="270"
+                 alt="Подарок">
+            <img class="contacts__title-stars d-none b-md-block" src="{{ 'assets/images/stars.png'|theme }}" width="270"
+                 height="270" alt="Звезды">
+        </div>
+
+        <div class="contacts__card">
+            <div class="contacts__card-title mb-2">Кликайте по кнопке</div>
+            <div class="contacts__card-text mb-4">
+                Уточним пожелания и предложим удобное время для пробного занятия в BabyRoo по указанному номеру
+            </div>
+            <button type="button" class="button button-yellow" data-bs-toggle="modal"
+                    data-bs-target="#request-modal">Записаться на бесплатное занятие
+            </button>
+        </div>
+    </div>
+
+    <div class="contacts__line"></div>
+    <div class="py-2 py-md-5"></div>
+
+    <div id="map" class="map mt-5">
+        <div class="container">
+            <div class="d-flex flex-column mb-4 md-md-5">
+                <div class="map__title mb-3" data-aos="fade-up">Как нас найти?</div>
+                <div class="map__address">г.&nbsp;Москва, ул.&nbsp;Самеда&nbsp;Вургуна, д.&nbsp;3</div>
+            </div>
+            <!--                <div id="yandex-map" class="yandex-map"></div>-->
+            <div class="yandex-map" style="position:relative;overflow:hidden;">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.525074%2C55.807074&mode=search&oid=1100149656&ol=biz&sctx=ZAAAAAgBEAAaKAoSCa3e4XZo8kNAEap9Oh4z0ExAEhIJRUYHJGHf2j8RX0TbMXVXwj8iBgABAgMEBSgKOABAiIYGSAFiOnJlbGV2X3JhbmtpbmdfaGVhdnlfcmVsZXZfdHVya19mb3JtdWxhPTAuNDpkYzYzNzI3MV9leHBfdHJqAnJ1nQHNzMw9oAEAqAEAvQHJ3KP2wgEFmOfLjASCAj3QodCy0Y%2FRgtC%2BINC00LzQuNGC0YDQuNC10LLRgdC60LjQuSDQtNC10YLRgdC60LjQuSDRhtC10L3RgtGAigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=37.525074%2C55.807074&sspn=0.052485%2C0.018803&text=%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%20%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%86%D0%B5%D0%BD%D1%82%D1%80&utm_source=ntp_chrome&z=15"
+                        width="1200" height="600" frameborder="1" allowfullscreen="true"
+                        style="position:relative;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
