@@ -2,15 +2,20 @@ init-local:
 	cp ./.env.local ./.env
 	docker network create october-network || true
 	make up-local
-	make install
+	make install-local
 init-prod:
 	cp ./.env.prod ./.env
 	docker network create october-network || true
 	make up-prod
-	make install
-install:
+	make install-prod
+install-local:
 	./bin/composer install -o -a
 	./bin/artisan migrate --force
+	./bin/artisan october:migrate
+	./bin/artisan key:generate
+install-prod:
+	./bin/composer install -o -a
+	./bin/artisan migrate:install
 	./bin/artisan october:migrate
 	./bin/artisan key:generate
 up-local:
