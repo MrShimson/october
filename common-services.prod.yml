@@ -5,9 +5,8 @@ services:
     php:
         build:
             context: .
-            dockerfile: .docker/php/Dockerfile
+            dockerfile: .docker/php/prod/Dockerfile
             args:
-                - DOCKER_UID_GID=${DOCKER_UID_GID}
                 - ENABLE_XDEBUG=${ENABLE_XDEBUG}
                 - SETTINGS_CHECK_KEY=${SETTINGS_CHECK_KEY}
                 - APP_DIR=${APP_DIR}
@@ -20,12 +19,11 @@ services:
         image: mysql:9.0.1
         environment:
             - MYSQL_DATABASE=${DB_DATABASE}
-            - MYSQL_USER=${DB_USERNAME}
             - MYSQL_PASSWORD=${DB_PASSWORD}
             - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
         ports:
             - "${DB_PORT}:${DB_PORT}"
-        restart: always
+        restart:  unless-stopped
 
     redis:
         image: redis:7.4.1-alpine

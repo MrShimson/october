@@ -1,0 +1,59 @@
+services:
+
+    october:
+        extends:
+            file: common-services.prod.yml
+            service: php
+        container_name: october
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        expose:
+            - "9000"
+        volumes:
+            - ./:/var/www/app:delegated
+        command: php-fpm -R
+        networks:
+            - october-network
+
+    nginx-october:
+        image: nginx
+        container_name: nginx-october
+        volumes:
+            - ./:/var/www/app:ro
+            - ./.docker/nginx/prod/default.conf:/etc/nginx/conf.d/default.conf
+            - /etc/letsencrypt/ssl/fullchain.pem:/etc/nginx/ssl/${APP_DOMAIN_NAME}/fullchain.pem
+            - /etc/letsencrypt/ssl/privkey.pem:/etc/nginx/ssl/${APP_DOMAIN_NAME}/privkey.pem
+        ports:
+            - "80:80"
+            - "443:443"
+        depends_on:
+            - october
+        networks:
+            - october-network
+
+    mysql:
+        container_name: mysql-october
+        extends:
+            file: common-services.prod.yml
+            service: mysql
+        volumes:
+            - mysql-october:/var/lib/mysql
+            - ./.docker/mysql/init:/docker-entrypoint-initdb.d
+        networks:
+            - october-network
+
+    redis:
+        container_name: redis-october
+        extends:
+            file: common-services.prod.yml
+            service: redis
+        networks:
+            - october-network
+
+networks:
+    october-network:
+        external: true
+
+volumes:
+    mysql-october:
+        driver: local

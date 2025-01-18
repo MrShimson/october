@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-docker-compose exec --user $(id -u):$(id -g) october composer "$@"
+docker-compose -f docker-compose.local.yml exec --user $(id -u):$(id -g) october composer "$@"
