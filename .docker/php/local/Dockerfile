@@ -28,7 +28,7 @@ COPY ./.docker/php/xdebug/docker-php-ext-xdebug-disabled.ini /usr/local/etc/php/
 COPY ./.docker/php/xdebug/configure-xdebug.sh /docker-entrypoint.d/
 RUN if [[ ${ENABLE_XDEBUG} = "0" ]] ; then \
     rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
-    rm /docker-entrypoint.d/40-configure-xdebug.sh && \
+    rm /docker-entrypoint.d/configure-xdebug.sh && \
     echo ENABLE_XDEBUG = $ENABLE_XDEBUG \
     ; else \
     rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug-disabled.ini && \
