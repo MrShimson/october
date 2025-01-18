@@ -10,6 +10,7 @@ init-prod:
 	make install
 install:
 	./bin/composer install -o -a
+	./bin/artisan migrate --force
 	./bin/artisan october:migrate
 	./bin/artisan key:generate
 up-local:
