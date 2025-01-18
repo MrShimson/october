@@ -11,6 +11,8 @@ RUN install-php-extensions \
     opcache \
     pdo_mysql \
     redis \
+    gd \
+    zip \
     xdebug
 
 ### Install Composer
