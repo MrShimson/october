@@ -4,7 +4,7 @@ description = "Default layout"
 <html>
     <head>
         {% partial 'site/head/meta' %}
-        <title>October CMS - {{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
+        <title>{{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         

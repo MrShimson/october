@@ -1,5 +1,5 @@
 .h1 {
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 65px;
     font-weight: bold;
     text-transform: uppercase;
@@ -203,7 +203,7 @@
     padding: 4px 8px 6px 10px;
     border-radius: 20px;
     color: var(--wheat);
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -229,6 +229,10 @@
     background-color: var(--secondary);
 }
 
+.accent-red {
+    background-color: var(--red);
+}
+
 .accent-wheat {
     background-color: var(--wheat);
     color: var(--secondary);
@@ -250,7 +254,7 @@
 }
 
 .brain-title {
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     text-transform: uppercase;
     color: var(--wheat);
@@ -280,7 +284,7 @@
 .brain-card__title {
     position: relative;
     z-index: 1;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -299,7 +303,7 @@
 }
 
 .creation__title {
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     text-transform: uppercase;
     color: var(--wheat);
@@ -333,7 +337,7 @@
 .creation-card__title {
     position: relative;
     z-index: 1;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -378,7 +382,7 @@
 
 .sport-description__title {
     padding: 0 40px;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
@@ -412,7 +416,7 @@
 .sport-description-card__title {
     position: relative;
     z-index: 1;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -438,7 +442,7 @@
 }
 
 .years__text {
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
@@ -483,7 +487,7 @@
 .costs-table {
     position: relative;
     z-index: 1;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     gap: 4px;
     display: flex;
     flex-direction: column;
@@ -604,7 +608,7 @@
 
 .default-modal .modal-title {
     width: 100%;
-    font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';
+    /*font-family: 'Namu', 'Arial', 'Helvetica', 'sans-serif';*/
     text-align: center;
     text-transform: uppercase;
     font-size: 28px;

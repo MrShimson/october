@@ -1,6 +1,6 @@
-title = "Page Not Found (404)"
 url = "/404"
 layout = "default"
+title = "Page Not Found (404)"
 
 [resources]
 ==
@@ -8,8 +8,12 @@ layout = "default"
     <meta name="turbo-visit-control" content="error">
 {% endput %}
 <div class="container page-404">
-    <div class="banner-404">
-        <h1>Page Not Found</h1>
-        <p>We're sorry, but the page you requested cannot be found.</p>
+    <div class="banner-404 py-4">
+        <h1 class="mb-2 text-center mb-4">К сожалению, страница не найдена (404)</h1>
+        <div class="d-flex justify-content-center">
+            <a href="/" class="button button-secondary button-sm">
+                На главную
+            </a>
+        </div>
     </div>
 </div>
