@@ -16,4 +16,5 @@ mysql --user=root --password="$MYSQL_ROOT_PASSWORD" <<-EOSQL
     ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
     FLUSH PRIVILEGES;
 EOSQL
+id
 mysql --user=root -e "SELECT User, Host, Plugin FROM mysql.user;"
