@@ -13,7 +13,7 @@ fi
 #TODO: Если менять пользователя БД, то нужно также менять <root@localhost> => <[username]@localhost> и <root> => <[user_password]>
 echo "Установка аутентификации пользователя через Unix сокет"
 mysql --user=root --password="$MYSQL_ROOT_PASSWORD" <<-EOSQL
-    ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket BY 'root';
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
     FLUSH PRIVILEGES;
 EOSQL
-echo "Аутентификация пользователя через Unix сокет успешно установлена"
+mysql --user=root -e "SELECT User, Host, Plugin FROM mysql.user;"
