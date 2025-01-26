@@ -10,8 +10,8 @@ services:
                 - ENABLE_XDEBUG=${ENABLE_XDEBUG}
                 - SETTINGS_CHECK_KEY=${SETTINGS_CHECK_KEY}
                 - APP_DIR=${APP_DIR}
-        environment:
-            PHP_IDE_CONFIG: "serverName=${APP_DOMAIN_NAME}"
+#        environment:
+#            PHP_IDE_CONFIG: "serverName=${APP_DOMAIN_NAME}"
         restart: unless-stopped
         tty: true
 
@@ -19,6 +19,7 @@ services:
         image: mysql:9.0.1
         environment:
             - MYSQL_DATABASE=${DB_DATABASE}
+#            - MYSQL_USER=${DB_USERNAME}
             - MYSQL_PASSWORD=${DB_PASSWORD}
             - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
         ports:
