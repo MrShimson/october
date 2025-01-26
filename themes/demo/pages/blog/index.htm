@@ -1,6 +1,5 @@
-##
 url = "/blog"
-layout = "blog"
+layout = "default"
 title = "Blog Homepage"
 
 [collection blog]
@@ -10,7 +9,7 @@ handle = "Blog\Post"
 handle = "Blog\Config"
 
 [resources]
-vars[activeNavLink] = 'blog'
+vars[activeNavLink] = "blog"
 ==
 {% set posts = blog.paginate(5) %}
 {% set archiveDates = blog
@@ -20,7 +19,7 @@ vars[activeNavLink] = 'blog'
 {% put pageTitle = blogConfig.blog_name ?: 'Blog' %}
 
 {% for post in posts %}
-    {% partial 'blog/post-card' post=post bannerCss='banner-lg' %}
+    {% partial 'news/article-card' post=post bannerCss='banner-lg' %}
 {% endfor %}
 
 <nav class="blog-pagination" aria-label="Pagination">
