@@ -520,14 +520,14 @@
     height: 60px;
     background-color: var(--white);
     border-radius: 50%;
-    transition: background-color .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
 .social:hover {
-    background-color: var(--wheat);
+    opacity: .7;
 }
 
 .up {
@@ -564,15 +564,15 @@
 }
 
 .carousel-frame-primary::before {
-    background-image: url("/themes/demo/assets/images/slider-bg-primary.png");
+    /*background-image: url("/themes/demo/assets/images/slider-bg-primary.png");*/
 }
 
 .carousel-frame-primary2::before {
-    background-image: url("/themes/demo/assets/images/slider-bg-primary2.png");
+    /*background-image: url("/themes/demo/assets/images/slider-bg-primary2.png");*/
 }
 
 .carousel-frame-secondary::before {
-    background-image: url("/themes/demo/assets/images/slider-bg-secondary.png");
+    /*background-image: url("/themes/demo/assets/images/slider-bg-secondary.png");*/
 }
 
 .fancybox-default .f-progress {
