@@ -1,0 +1,18 @@
+url = "/news"
+layout = "default"
+title = "Новости"
+meta_title = "Свято-Димитриевский детский центр | Новости"
+
+[collection blog]
+handle = "Blog\Post"
+==
+{% set posts = blog.paginate(5) %}
+<div class="container py-5">
+    <h1 class="h1 text-primary text-center mb-4">Новости</h1>
+
+    <div class="articles-grid">
+        {% for post in posts %}
+            {% partial 'news/article-card' post=post %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<a class="article-card" href="{{ 'news/article'|page({ slug: post.slug, id: post.id }) }}">
+    {% if post.banner %}
+        <div class="article-card__banner {{ bannerCss|default('') }}" style="background-image:url('{{ post.banner.path }}')"></div>
+    {% else %}
+        <div class="article-card__banner {{ bannerCss|default('') }}" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
+    {% endif %}
+    <div class="article-card__content">
+        <div class="article-card__date mb-1">{{ post.published_at_date|date('D.M.Y') }}</div>
+        <div class="article-card__title mb-2">{{ post.title }}</div>
+        <div class="article-card__text">{{ post.featured_text }}</div>
+    </div>
+</a>
+
+<!--<div class="col {{ cssClass|default('') }}">-->
+<!--    <div class="card card-post mb-5">-->
+<!--        {% if post.banner %}-->
+<!--            <div class="card-banner {{ bannerCss|default('') }}" style="background-image:url('{{ post.banner.path }}')"></div>-->
+<!--        {% else %}-->
+<!--            <div class="card-banner {{ bannerCss|default('') }}" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>-->
+<!--        {% endif %}-->
+
+<!--        <div class="card-body">-->
+<!--&lt;!&ndash;            {% if post.categories %}&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="blog-post-categories">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <ul class="list-inline">&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% for category in post.categories %}&ndash;&gt;-->
+<!--&lt;!&ndash;                            <li class="list-inline-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                                &mdash; <a href="{{ 'blog/category'|page({ slug: category.slug, id: category.id }) }}">{{ category.title }}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                        {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            {% endif %}&ndash;&gt;-->
+
+<!--            <h4 class="card-title">-->
+<!--                <a href="{{ 'news/article'|page({ slug: post.slug, id: post.id }) }}" class="stretched-link">{{ post.title }}</a>-->
+<!--            </h4>-->
+
+<!--            <div class="featured-text">-->
+<!--                <p>{{ post.featured_text }}</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="card-footer">-->
+<!--            <div class="card-meta">-->
+<!--                <div class="meta-item meta-date text-icon text-icon-date">-->
+<!--                    {{ post.published_at_date|date('j M Y') }}-->
+<!--                </div>-->
+<!--                {% if post.author %}-->
+<!--                    <div class="meta-item meta-divider">-->
+<!--                        &bull;-->
+<!--                    </div>-->
+<!--                    <div class="meta-item meta-author text-icon text-icon-author">-->
+<!--                        By <a href="{{ 'blog/author'|page({ slug: post.author.slug }) }}">-->
+<!--                            {{ post.author.title|default('') }}-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                {% endif %}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
