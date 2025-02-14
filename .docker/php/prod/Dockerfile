@@ -4,6 +4,11 @@ ARG ENABLE_XDEBUG
 ARG SETTINGS_CHECK_KEY
 ARG APP_DIR
 
+### Configure PHP
+
+RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+COPY ./.docker/php/local/php-production.ini /usr/local/etc/php/conf.d/
+
 ### Install PHP extensions
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
@@ -35,8 +40,18 @@ RUN if [[ ${ENABLE_XDEBUG} = "0" ]] ; then \
     ; fi
 
 ### Configure PHP-FPM
+
 RUN sed -i -e 's/^user =.*/user = root/' /usr/local/etc/php-fpm.d/www.conf
-RUN sed -i -e "s/^;pm.status_path =.*/pm\.status_path = \/php-fpm\/${SETTINGS_CHECK_KEY}/" /usr/local/etc/php-fpm.d/www.conf
+RUN sed -i -e "s/^;pm.status_path =.*/pm\.status_path = \/php-fpm\/${SETTINGS_CHECK_KEY}/" /usr/local/etc/php-fpm.d/www.conf && \
+echo "pm = dynamic" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "pm.max_children = 20" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "pm.start_servers = 5" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "pm.min_spare_servers = 5" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "pm.max_spare_servers = 10" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "max_execution_time = 30" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "request_terminate_timeout = 300" >> /usr/local/etc/php-fpm.d/www.conf && \
+echo "memory_limit = 128M" >> /usr/local/etc/php-fpm.d/www.conf
 
 ### Run app
+
 WORKDIR $APP_DIR
