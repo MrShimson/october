@@ -13,6 +13,7 @@ COPY ./.docker/php/local/php-production.ini /usr/local/etc/php/conf.d/
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions \
+    gd \
     opcache \
     pdo_mysql \
     redis \
