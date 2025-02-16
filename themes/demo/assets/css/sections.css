@@ -551,7 +551,7 @@
     row-gap: 30px;
     column-gap: 40px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 /* End of Management */
 
@@ -835,7 +835,7 @@
     }
 
     .management__list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer {
