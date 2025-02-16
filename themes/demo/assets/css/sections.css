@@ -533,6 +533,19 @@
 }
 /* End of Articles */
 
+/* Documents */
+.documents {
+
+}
+
+.documents__list {
+    row-gap: 30px;
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* End of Documents */
+
 /* Footer */
 .footer {
     padding-top: 40px;
@@ -808,8 +821,12 @@
         background-size: cover;
     }
 
+    .documents__list {
+        grid-template-columns: 1fr;
+    }
+
     .footer {
-        padding: 150px 0 0 0;
+        padding: 40px 0 0 0;
     }
 
     .footer__inner {

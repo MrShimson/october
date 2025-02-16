@@ -817,6 +817,18 @@
     color: var(--black);
 }
 
+.document-preview {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.document-preview img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
 /* XXL */
 @media screen and (max-width: 1400px) {
     .h1 {
