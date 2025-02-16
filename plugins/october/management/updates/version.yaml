@@ -1,0 +1,4 @@
+v1.0.1: First version of Management
+v1.0.2:
+    - Migrations
+    - create_employees_table.php

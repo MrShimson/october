@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    first_name:
+        label: First Name
+        type: text
+    last_name:
+        label: Last Name
+        type: text
+    avatar:
+        label: Avatar
+        type: mediafinder
+    position:
+        label: Position
+        type: text

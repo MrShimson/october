@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Employee
+
+# Model Form Field configuration
+form: $/october/management/models/employee/fields.yaml
+
+# Model Class name
+modelClass: October\Management\Models\Employee
+
+# Default redirect location
+defaultRedirect: october/management/employees
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: october/management/employees/update/:id
+    redirectClose: october/management/employees
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: october/management/employees
+    redirectClose: october/management/employees
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
