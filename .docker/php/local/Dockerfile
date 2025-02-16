@@ -49,11 +49,6 @@ RUN adduser -S -s /bin/bash -u $DOCKER_UID_GID -D -h /home/appuser appuser
 
 RUN sed -i -e 's/^user =.*/user = appuser/' /usr/local/etc/php-fpm.d/www.conf
 RUN sed -i -e "s/^;pm.status_path =.*/pm\.status_path = \/php-fpm\/${SETTINGS_CHECK_KEY}/" /usr/local/etc/php-fpm.d/www.conf
-#RUN echo "php_value[upload_max_filesize] = 50M" >> /usr/local/etc/php-fpm.d/www.conf && \
-#echo "php_value[post_max_size] = 50M" >> /usr/local/etc/php-fpm.d/www.conf && \
-#echo "php_value[max_execution_time] = 300" >> /usr/local/etc/php-fpm.d/www.conf && \
-#echo "php_value[max_input_time] = 300" >> /usr/local/etc/php-fpm.d/www.conf && \
-#echo "php_value[memory_limit] = 512M" >> /usr/local/etc/php-fpm.d/www.conf \
 
 USER $DOCKER_UID_GID:$DOCKER_UID_GID
 
