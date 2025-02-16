@@ -39,7 +39,6 @@ services:
             service: mysql
         volumes:
             - mysql-october:/var/lib/mysql
-            - ./.docker/mysql/init:/docker-entrypoint-initdb.d
         networks:
             - october-network
         healthcheck:

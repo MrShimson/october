@@ -26,7 +26,7 @@ down-prod:
 
 install:
 	./bin/composer install -o -a
-	sleep 10
+	sleep 20
 	./bin/artisan migrate --force
 	./bin/artisan october:migrate
 	./bin/artisan key:generate
