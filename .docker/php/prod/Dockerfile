@@ -50,7 +50,6 @@ echo "pm.start_servers = 5" >> /usr/local/etc/php-fpm.d/www.conf && \
 echo "pm.min_spare_servers = 5" >> /usr/local/etc/php-fpm.d/www.conf && \
 echo "pm.max_spare_servers = 10" >> /usr/local/etc/php-fpm.d/www.conf && \
 echo "request_terminate_timeout = 300" >> /usr/local/etc/php-fpm.d/www.conf && \
-echo "memory_limit = 128M" >> /usr/local/etc/php-fpm.d/www.conf
 
 ### Run app
 
