@@ -7,7 +7,7 @@ ARG APP_DIR
 ### Configure PHP
 
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
-COPY ./.docker/php/local/php-production.ini /usr/local/etc/php/conf.d/
+COPY ./.docker/php/prod/php-production.ini /usr/local/etc/php/conf.d/
 
 ### Install PHP extensions
 
