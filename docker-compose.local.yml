@@ -20,6 +20,7 @@ services:
         container_name: nginx-october
         volumes:
             - ./:/var/www/app:ro
+            - ./.docker/nginx/local/default.conf:/etc/nginx/conf.d/default.conf
         ports:
             - "80:80"
         depends_on:
@@ -34,7 +35,6 @@ services:
             service: mysql
         volumes:
             - mysql-october:/var/lib/mysql
-            - ./.docker/mysql/init:/docker-entrypoint-initdb.d
         networks:
             - october-network
         healthcheck:
