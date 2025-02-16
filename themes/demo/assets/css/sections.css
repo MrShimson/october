@@ -546,6 +546,15 @@
 }
 /* End of Documents */
 
+/* Management */
+.management__list {
+    row-gap: 30px;
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/* End of Management */
+
 /* Footer */
 .footer {
     padding-top: 40px;
@@ -822,6 +831,10 @@
     }
 
     .documents__list {
+        grid-template-columns: 1fr;
+    }
+
+    .management__list {
         grid-template-columns: 1fr;
     }
 

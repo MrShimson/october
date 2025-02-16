@@ -829,6 +829,34 @@
     object-fit: contain;
 }
 
+.employee-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-card__avatar {
+    width: 140px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.employee-card__name {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.employee-card__position {
+    font-size: 16px;
+    text-align: center;
+}
+
 /* XXL */
 @media screen and (max-width: 1400px) {
     .h1 {
