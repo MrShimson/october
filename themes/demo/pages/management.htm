@@ -6,12 +6,12 @@ meta_title = "Свято-Димитриевский детский центр | 
 [employees]
 ==
 <div class="container py-5">
-    <h1 class="h1 text-primary text-center mb-4">Руководство</h1>
+    <h1 class="h1 text-primary text-center mb-5">Руководство</h1>
 
     <div class="management__list">
         {% for employee in employees.get %}
             <div class="employee-card">
-                <img class="employee-card__avatar" width="140" height="140" src="{{ employee.avatar }}" alt="Avatar">
+                <img class="employee-card__avatar" width="200" height="200" src="{{ employee.avatar|media }}" alt="Avatar">
                 <div class="employee-card__name">{{ employee.first_name }} {{ employee.last_name }}</div>
                 <div class="employee-card__position">{{ employee.position }}</div>
             </div>
