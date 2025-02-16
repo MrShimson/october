@@ -24,7 +24,7 @@ init-prod:
 	make install-prod
 install-prod:
 	./bin/composer install -o -a
-	sleep 10
+	sleep 5
 	./bin/artisan migrate:install
 	./bin/artisan october:migrate
 	./bin/artisan key:generate
