@@ -43,7 +43,7 @@ services:
         networks:
             - october-network
         healthcheck:
-            test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
             interval: 30s
             timeout: 10s
             retries: 3
