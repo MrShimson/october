@@ -567,7 +567,7 @@
 
 .footer__bottom {
     padding: 40px 0;
-    background-color: var(--primary-dark);
+    background-color: var(--background-primary);
 }
 
 .footer__inner {
