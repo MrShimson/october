@@ -39,7 +39,7 @@ services:
             service: mysql
         volumes:
             - mysql-october:/var/lib/mysql
-            - ./.docker/mysql/my.cnf:/etc/my.cnf.d/
+            - ./.docker/mysql/my.cnf:/etc/my.cnf.d/my.cnf
         networks:
             - october-network
 
