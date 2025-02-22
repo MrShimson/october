@@ -1,4 +1,6 @@
-export $(grep -v '^#' .env | xargs);
+DB_ROOT_PASSWORD := $(shell grep -m 1 'DB_ROOT_PASSWORD' .env | cut -d '=' -f2)
+DB_DATABASE := $(shell grep -m 1 'DB_DATABASE' .env | cut -d '=' -f2)
+DB_BACKUP_PATH := $(shell grep -m 1 'DB_BACKUP_PATH' .env | cut -d '=' -f2)
 
 # Local
 init-local:
