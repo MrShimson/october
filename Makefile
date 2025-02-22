@@ -32,4 +32,4 @@ install:
 # Database
 dump:
 	export $(shell sed 's/=.*//' .env); \
-	docker exec mysql-october sh -c 'mysqldump -u root --password=$$DB_ROOT_PASSWORD $$DB_DATABASE > $$DB_BACKUP_PATH/$$DB_DATABASE"_backup".sql'
+	docker exec mysql-october sh -c 'mysqldump -u root --password=$DB_ROOT_PASSWORD $DB_DATABASE > $DB_BACKUP_PATH/$DB_DATABASE"_backup".sql'
