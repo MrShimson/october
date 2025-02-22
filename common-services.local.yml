@@ -23,7 +23,7 @@ services:
             - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
         ports:
             - "${DB_PORT}:${DB_PORT}"
-        restart: unless-stopped
+        restart: always
 
     redis:
         image: redis:7.4.1-alpine
@@ -31,4 +31,4 @@ services:
             - "${REDIS_PORT}:${REDIS_PORT}"
         environment:
             - ALLOW_EMPTY_PASSWORD=yes
-        restart: unless-stopped
+        restart: always

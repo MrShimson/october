@@ -12,6 +12,8 @@ services:
             - "9000"
         volumes:
             - ./:/var/www/app:delegated
+        depends_on:
+            - mysql
         networks:
             - october-network
 

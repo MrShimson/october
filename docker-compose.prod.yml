@@ -12,10 +12,10 @@ services:
         volumes:
             - ./:/var/www/app:delegated
         command: php-fpm -R
-        networks:
-            - october-network
         depends_on:
             - mysql
+        networks:
+            - october-network
 
     nginx-october:
         image: nginx
