@@ -19,10 +19,12 @@ services:
         image: mysql:8.0.32
         environment:
             - MYSQL_DATABASE=${DB_DATABASE}
+            - MYSQL_USER=${DB_USERNAME}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
             - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
         ports:
             - "${DB_PORT}:${DB_PORT}"
-        restart:  unless-stopped
+        restart: always
 
     redis:
         image: redis:7.4.1-alpine
@@ -30,4 +32,4 @@ services:
             - "${REDIS_PORT}:${REDIS_PORT}"
         environment:
             - ALLOW_EMPTY_PASSWORD=yes
-        restart: unless-stopped
+        restart: always

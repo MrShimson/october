@@ -42,6 +42,11 @@ services:
             - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
         networks:
             - october-network
+        command: --default-authentication-plugin=caching_sha2_password
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "--host=127.0.0.1", "--password=${MYSQL_ROOT_PASSWORD}"]
+            interval: 30s
+            retries: 3
 
     redis:
         container_name: redis-october
