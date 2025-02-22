@@ -14,6 +14,8 @@ services:
         command: php-fpm -R
         networks:
             - october-network
+        depends_on:
+            - mysql
 
     nginx-october:
         image: nginx
