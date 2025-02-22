@@ -14,7 +14,7 @@ down-local:
 
 init-prod:
 	cp ./.env.prod ./.env
-	./.docker/mysql/generate-password.sh
+	./.docker/mysql/init/generate-password.sh
 	docker network create october-network || true
 	make up-prod
 	make install
