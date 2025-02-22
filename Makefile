@@ -1,7 +1,3 @@
-DB_ROOT_PASSWORD := $(shell grep -m 1 'DB_ROOT_PASSWORD' .env | cut -d '=' -f2)
-DB_DATABASE := $(shell grep -m 1 'DB_DATABASE' .env | cut -d '=' -f2)
-DB_BACKUP_PATH := $(shell grep -m 1 'DB_BACKUP_PATH' .env | cut -d '=' -f2)
-
 # Local
 init-local:
 	cp ./.env.local ./.env
@@ -35,6 +31,9 @@ install:
 
 # Database
 dump:
+	export $(shell grep -m 1 'DB_ROOT_PASSWORD' .env | cut -d '=' -f2)
+    export $(shell grep -m 1 'DB_DATABASE' .env | cut -d '=' -f2)
+    export $(shell grep -m 1 'DB_BACKUP_PATH' .env | cut -d '=' -f2)
 	@docker exec mysql-october sh -c 'mysqldump -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} > ${DB_BACKUP_PATH}/${DB_DATABASE}_backup.sql'
 restore:
 	@docker exec mysql-october sh -c 'mysql -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} < ${DB_BACKUP_PATH}/${DB_DATABASE}_backup.sql'
