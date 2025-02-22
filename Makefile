@@ -31,8 +31,8 @@ install:
 
 # Database
 dump:
-	@export $(sed 's/=.*//' .env); \
+	@export $(grep -v '^#' .env | xargs) \
 	docker exec mysql-october sh -c 'mysqldump -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} > ${DB_BACKUP_PATH}/${DB_DATABASE}"_backup".sql'
 restore:
-	@export $(sed 's/=.*//' .env); \
+	@export $(grep -v '^#' .env | xargs) \
 	docker exec mysql-october sh -c 'mysql -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} < ${DB_BACKUP_PATH}/${DB_DATABASE}"_backup".sql'
