@@ -12,7 +12,7 @@ down-local:
 # Production
 init-prod:
 	cp ./.env.prod ./.env
-	./.docker/mysql/init/generate-password.sh
+	./.docker/mysql/init/generate-password
 	docker network create october-network || true
 	make up-prod
 	make install
@@ -31,9 +31,6 @@ install:
 
 # Database
 dump:
-	export $(shell grep -m 1 'DB_ROOT_PASSWORD' .env | cut -d '=' -f2)
-    export $(shell grep -m 1 'DB_DATABASE' .env | cut -d '=' -f2)
-    export $(shell grep -m 1 'DB_BACKUP_PATH' .env | cut -d '=' -f2)
-	@docker exec mysql-october sh -c 'mysqldump -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} > ${DB_BACKUP_PATH}/${DB_DATABASE}_backup.sql'
+	./bin/dump-bd
 restore:
-	@docker exec mysql-october sh -c 'mysql -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} < ${DB_BACKUP_PATH}/${DB_DATABASE}_backup.sql'
+	./bin/restore-bd
