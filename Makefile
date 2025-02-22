@@ -1,3 +1,5 @@
+export $(grep -v '^#' .env | xargs);
+
 # Local
 init-local:
 	cp ./.env.local ./.env
@@ -31,8 +33,6 @@ install:
 
 # Database
 dump:
-	@export $(grep -v '^#' .env | xargs); \
 	docker exec mysql-october sh -c 'mysqldump -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} > ${DB_BACKUP_PATH}/${DB_DATABASE}"_backup".sql'
 restore:
-	@export $(grep -v '^#' .env | xargs); \
 	docker exec mysql-october sh -c 'mysql -u root --password=${DB_ROOT_PASSWORD} ${DB_DATABASE} < ${DB_BACKUP_PATH}/${DB_DATABASE}"_backup".sql'
