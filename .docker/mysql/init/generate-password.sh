@@ -10,6 +10,6 @@ sed -i "s/^DB_ROOT_PASSWORD=.*/DB_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD/" .env
 # Заменяем значение для DB_PASSWORD
 sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=$MYSQL_PROD_USER_PASSWORD/" .env
 
-
 # Вывод сгенерированного пароля
-echo "Новый пароль для MySQL: $MYSQL_PASSWORD"
+echo "Новый пароль для root MySQL: $MYSQL_ROOT_PASSWORD"
+echo "Новый пароль для пользователя MySQL: $MYSQL_PROD_USER_PASSWORD"
