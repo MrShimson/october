@@ -40,6 +40,7 @@ services:
         volumes:
             - mysql-october:/var/lib/mysql
             - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+            - ./.docker/mysql/dump:${DB_BACKUP_PATH}
         networks:
             - october-network
         command: --default-authentication-plugin=caching_sha2_password

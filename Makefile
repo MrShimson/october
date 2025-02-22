@@ -1,5 +1,4 @@
 # Local
-
 init-local:
 	cp ./.env.local ./.env
 	docker network create october-network || true
@@ -11,7 +10,6 @@ down-local:
 	docker-compose -f docker-compose.local.yml down
 
 # Production
-
 init-prod:
 	cp ./.env.prod ./.env
 	./.docker/mysql/init/generate-password.sh
@@ -24,10 +22,14 @@ down-prod:
 	docker-compose -f docker-compose.prod.yml down
 
 # Common
-
 install:
 	./bin/composer install -o -a
 	sleep 20
 	./bin/artisan migrate --force
 	./bin/artisan october:migrate
 	./bin/artisan key:generate
+
+# Database
+dump:
+	export $(shell sed 's/=.*//' .env); \
+	docker exec mysql-october sh -c 'mysqldump -u $$DB_USERNAME -p$$DB_PASSWORD $$DB_DATABASE > $$DB_BACKUP_PATH/$$DB_DATABASE"_backup".sql'
