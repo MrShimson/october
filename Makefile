@@ -31,6 +31,6 @@ install:
 
 # Database
 dump:
-	./bin/dump-bd
+	./bin/dump-db
 restore:
-	./bin/restore-bd
+	./bin/restore-db
