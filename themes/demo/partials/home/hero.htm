@@ -8,7 +8,7 @@
                     {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'] %}
 
                     {% for image in facadeImages %}
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ ('Facade/' ~ image)|media }}">
+                    <div class="f-carousel__slide" data-fancybox="hero-1" data-src="{{ ('Facade/' ~ image)|media }}">
                         <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
                         <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
                     </div>
@@ -87,7 +87,7 @@
                     {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'] %}
 
                     {% for image in facadeImages %}
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ ('Facade/' ~ image)|media }}">
+                    <div class="f-carousel__slide" data-fancybox="hero-2" data-src="{{ ('Facade/' ~ image)|media }}">
                         <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
                         <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
                     </div>
