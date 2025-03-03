@@ -416,7 +416,7 @@
 }
 
 .gallery .fancybox-default {
-    height: 600px;
+    height: 750px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -739,7 +739,7 @@
     .hero .fancybox-default {
         max-width: 100%;
         width: 100%;
-        height: auto;
+        height: 260px;
     }
 
     .courses__title {
@@ -831,6 +831,10 @@
         width: 350%;
         top: 1550px;
         left: -100px;
+    }
+
+    .gallery .fancybox-default {
+        height: 260px;
     }
 
     .costs {
