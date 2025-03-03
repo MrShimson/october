@@ -5,69 +5,81 @@
                 <h1 class="h1 mb-2">Свято-Димитриевский</h1>
                 <div class="hero__subtitle mb-4 md-md-5">детский центр</div>
                 <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary d-lg-none">
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>
+                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'] %}
+
+                    {% for image in facadeImages %}
+                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ ('Facade/' ~ image)|media }}">
+                        <img class="" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
                     </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/4.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/4.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/5.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/5.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/6.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/6.jpg'|media }}" alt="3"/>
-                    </div>
+                    {% endfor %}
                 </div>
-                <div class="hero__circle z-1 mb-3">
-                    <div class="hero__circle-title mb-2">Кому помогаем</div>
+                <div class="hero__circle z-1 mb-2 mb-md-3">
                     <ul class="hero__list">
-                        <li class="hero__list-item">Семьям с детьми в трудной жизненной ситуации</li>
-                        <li class="hero__list-item">Одиноким матерям и отцам</li>
-                        <li class="hero__list-item">Семьям выпускниц детского дома</li>
-                        <li class="hero__list-item">Семьям, воспитывающих детей с инвалидностью и ОВЗ</li>
-                        <li class="hero__list-item">Многодетным семьям</li>
-                        <li class="hero__list-item">Другим категориям нуждающихся в помощи семей</li>
-                    </ul>
-<!--                    <button-->
-<!--                            type="button"-->
-<!--                            class="hero__circle-info"-->
-<!--                            data-bs-toggle="popover"-->
-<!--                            data-bs-placement="left"-->
-<!--                            data-bs-custom-class="custom-popover"-->
-<!--                            data-bs-html="true"-->
-<!--                            data-bs-trigger="focus"-->
-<!--                            data-bs-content="<span class='fw-bold'>Развиваем творческое самовыражение</span>: занимаемся рисованием, изо-лепкой, аппликацией<br><br>-->
-<!--<span class='fw-bold'>Формируем интеллектуальный капитал</span>: занимаемся ранним развитием детей и подготовкой к школе<br><br>-->
-<!--<span class='fw-bold'>Совершенствуем эмоциональную сферу</span>: учимся понимать свои эмоции<br><br>-->
-<!--<span class='fw-bold'>Растим чемпионов и лидеров</span>: занимаемся физическим развитием с элементами бэби-фитнеса и бэби-йоги"-->
-<!--                    >-->
-<!--                    </button>-->
-                </div>
-                <div class="hero__circle">
-                    <div class="hero__circle-title mb-2">Как помогаем</div>
-                    <ul class="hero__list">
-                        <li class="hero__list-item">Присмотр и уход за дошкольниками в инклюзивных группах до 12 человек</li>
-                        <li class="hero__list-item">...</li>
+                        <li class="hero__list-item">
+                            Имеем 25-летний опыт воспитания детей и их успешной социализации в обществе
+                        </li>
+                        <li class="hero__list-item">
+                            С 2016 года помогает семьям в трудной жизненной ситуации, когда может возникнуть угроза
+                            изъятия ребенка из семьи
+                        </li>
+                        <li class="hero__list-item">
+                            Оказывает семьям комплексную помощь в социализации и развитии ребенка,
+                            психолого-педагогическую и методическую помощь
+                        </li>
                     </ul>
                 </div>
-<!--                <div class="hero__desc-title mb-2">-->
-<!--                    Запишитесь на-->
-<!--                    <span class="text-secondary">бесплатное</span> пробное занятие-->
-<!--                </div>-->
-<!--                <div class="hero__desc-text mb-4">-->
-<!--                    А для новых учеников мы подготовили <span class="text-yellow">БОНУС</span> - подарочное-->
-<!--                    занятие-->
-<!--                    в <span class="text-yellow">АРТ-СТУДИИ</span>-->
-<!--                </div>-->
-<!--                <button type="button" class="button button-secondary" data-bs-toggle="modal"-->
-<!--                        data-bs-target="#request-modal">Записаться на бесплатное занятие-->
-<!--                </button>-->
+                <div class="hero__collapse mb-2 mb-md-3">
+                    <button class="hero__collapse-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hero-collapse-1" aria-expanded="false">
+                        Кому помогаем
+                    </button>
+                    <div class="hero__collapse-content collapse" id="hero-collapse-1">
+                        <ul class="hero__list">
+                            <li class="hero__list-item">Семьям с детьми в трудной жизненной ситуации</li>
+                            <li class="hero__list-item">Одиноким матерям и отцам</li>
+                            <li class="hero__list-item">Семьям выпускниц детского дома</li>
+                            <li class="hero__list-item">Семьям, воспитывающих детей с инвалидностью и ОВЗ</li>
+                            <li class="hero__list-item">Многодетным семьям</li>
+                            <li class="hero__list-item">Другим категориям нуждающихся в помощи семей</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hero__collapse">
+                    <button class="hero__collapse-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hero-collapse-2" aria-expanded="false">
+                        Как помогаем
+                    </button>
+                    <div class="hero__collapse-content collapse" id="hero-collapse-2">
+                        <ul class="hero__list">
+                            <li class="hero__list-item">
+                                Присмотр и уход за дошкольниками в инклюзивных группах до 12 человек
+                            </li>
+                            <li class="hero__list-item">
+                                По будням с 8:30 до 18:00 малокомплектные (до 10 человек) инклюзивные дошкольные группы
+                                дневного пребывания
+                            </li>
+                            <li class="hero__list-item">
+                                По будням с 8:30 до 18:00 малокомплектные (до 10 человек) инклюзивные дошкольные группы
+                                дневного пребывания
+                            </li>
+                            <li class="hero__list-item">
+                                По потребности родителей (болезнь, необходимость госпитализации, отъезда, ночные дежурства
+                                одинокого родителя, другие обстоятельства) организация ночных групп
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--                <div class="hero__circle z-1 mb-3">-->
+                <!--                    <div class="hero__circle-title mb-2">Кому помогаем</div>-->
+                <!--                    <ul class="hero__list">-->
+                <!--                        <li class="hero__list-item">Семьям с детьми в трудной жизненной ситуации</li>-->
+                <!--                        <li class="hero__list-item">Одиноким матерям и отцам</li>-->
+                <!--                        <li class="hero__list-item">Семьям выпускниц детского дома</li>-->
+                <!--                        <li class="hero__list-item">Семьям, воспитывающих детей с инвалидностью и ОВЗ</li>-->
+                <!--                        <li class="hero__list-item">Многодетным семьям</li>-->
+                <!--                        <li class="hero__list-item">Другим категориям нуждающихся в помощи семей</li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
             </div>
             <div class="hero__slider-wrapper">
                 <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary">

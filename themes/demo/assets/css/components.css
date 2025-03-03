@@ -8,13 +8,16 @@
 
 .logo {
     position: relative;
-    background-color: var(--white);
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
     position: relative;
     z-index: 1;
+    border-radius: 50%;
+    background-color: var(--white);
 }
 
 .nav {
