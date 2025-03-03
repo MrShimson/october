@@ -578,6 +578,29 @@
     /*background-image: url("/themes/demo/assets/images/slider-bg-secondary.png");*/
 }
 
+.fancybox-default .fancybox-default__image {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+}
+
+.fancybox-default__backdrop {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fancybox-default .f-carousel__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .fancybox-default .f-progress {
     display: none;
 }

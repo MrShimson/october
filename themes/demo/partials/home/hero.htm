@@ -5,11 +5,12 @@
                 <h1 class="h1 mb-2">Свято-Димитриевский</h1>
                 <div class="hero__subtitle mb-4 md-md-5">детский центр</div>
                 <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary d-lg-none">
-                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'] %}
+                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'] %}
 
                     {% for image in facadeImages %}
                     <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ ('Facade/' ~ image)|media }}">
-                        <img class="" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
+                        <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
+                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
                     </div>
                     {% endfor %}
                 </div>
@@ -83,24 +84,14 @@
             </div>
             <div class="hero__slider-wrapper">
                 <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary">
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>
+                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'] %}
+
+                    {% for image in facadeImages %}
+                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ ('Facade/' ~ image)|media }}">
+                        <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
+                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
                     </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/4.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/4.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/5.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/5.jpg'|media }}" alt="3"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/6.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/6.jpg'|media }}" alt="3"/>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -127,13 +127,13 @@
 .hero__slider-wrapper {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .hero__slider-wrapper .fancybox-default {
     max-width: 90%;
     width: 700px;
-    height: 450px;
+    height: 420px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -416,6 +416,7 @@
 }
 
 .gallery .fancybox-default {
+    height: 600px;
     border-radius: 20px;
     overflow: hidden;
 }
