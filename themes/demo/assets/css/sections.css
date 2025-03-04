@@ -816,6 +816,10 @@
         grid-template-columns: 1fr;
     }
 
+    .directions__cards {
+        grid-template-columns: 1fr;
+    }
+
     .steps {
         padding-bottom: 30px;
     }
