@@ -1,155 +1,201 @@
 <section id="directions" class="directions">
     <div class="container">
-        <div class="directions__logo mb-3">
-            <img class="d-block mx-auto" src="{{ 'assets/images/icons/kangaroo.svg'|theme }}" width="32" height="56"
-                 alt="Kangaroo"/>
+        <div class="logo mx-auto mb-3 mb-md-4">
+            <img src="{{ 'assets/images/logo.png'|theme }}" width="100" height="100" alt="Логотип"/>
         </div>
 
-        <div class="directions__title mb-3" data-aos="fade-up">
-            НАШИ <span class="directions__title-accent">ПРОСТРАНСТВА</span>
-        </div>
+        <!--        <div class="directions__title mb-3" data-aos="fade-up">-->
+        <!--            НАШИ <span class="directions__title-accent">НАПРАВЛЕНИЯ</span>-->
+        <!--        </div>-->
 
-        <div class="directions__subtitle mb-4 md-md-5">
-            Комплексное занятие - это сразу три направления в рамках одного занятия. Каждый блок проходит в
-            своем пространстве и со своим педагогом
-        </div>
-
-        <div class="directions__grid pt-4 mb-4 md-md-5">
-            <!-- Step 1 -->
-            <div class="intellect">
-                <div class="accent accent-lg accent-primary mb-4" data-aos="fade-up">
-                    Интеллектуальное пространство
-                </div>
-                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/1.jpg">
-                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/2.jpg">
-                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/3.jpg">
-                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>
-                    </div>
-                </div>
+        <div class="directions__cards">
+            <div class="directions-card">
+                <div class="directions-card__title">Направления работы</div>
+                <ol class="directions-card__list">
+                    <li class="directions-card__list-item">Подготовка к школе детей из семей в трудной жизненной
+                        ситуации
+                    </li>
+                    <li class="directions-card__list-item">Начальное школьное образование для детей с синдромом Дауна и
+                        другими ментальными особенностями развития
+                    </li>
+                    <li class="directions-card__list-item">Духовно-нравственное развитие детей</li>
+                    <li class="directions-card__list-item">Помощь семьям с детьми беженцев с территорий СВО</li>
+                    <li class="directions-card__list-item">Психолого-педагогическая и иная необходимая помощь родителям,
+                        оказавшимся в трудной жизненной ситуации
+                    </li>
+                </ol>
             </div>
-
-            <!-- Step 2 -->
-            <div class="brain">
-                <img class="d-none d-md-block mx-auto" src="{{ 'assets/images/brain.png'|theme }}" width="225" height="225"
-                     alt="Мозг"/>
-                <div class="brain-title mb-4 md-md-5" data-aos="fade-up">
-                    У пытливого детского ума -
-                    <div class="accent accent-wheat">перспективное будущее</div>
-                </div>
-                <div class="brain-card z-1">
-                    <div class="brain-card__title mb-2"><span class="text-yellow">1.</span> Раннее развитие и
-                        подготовка
-                        к школе
-                    </div>
-                    <div class="brain-card__text">
-                        <p class="mb-1">
-                            В интеллектуальном пространстве у нас проходит блок раннего развития для детей 2-3
-                            года
-                            и
-                            подготовки к школе для детей 5-7 лет.
-                        </p>
-                        <p class="mb-1">
-                            На <span class="fw-bolder">раннем развитии</span> мы занимаемся изучением
-                            окружающего
-                            мира и
-                            развитием речи, выполняем дидактические и нейрогимнастические упражнения, задания на
-                            логику.
-                        </p>
-                        <p class="mb-0">
-                            На <span class="fw-bolder">подготовке к школе</span> мы учимся считать, читать и
-                            писать,
-                            формируем усидчивость, развиваем память, работаем над развитием межполушарных
-                            связей,
-                            занимаемся нейрогимнастикой.
-                        </p>
-                    </div>
-                </div>
+            <div class="directions-card">
+                <div class="directions-card__title">Эффективность работы детского Центра</div>
+                <ol class="directions-card__list">
+                    <li class="directions-card__list-item">Ни один ребенок из подопечных семей не пополнил ряды
+                        интернатных учреждений
+                    </li>
+                    <li class="directions-card__list-item">Улучшаются показатели психического и речевого развития
+                        подопечных детей
+                    </li>
+                    <li class="directions-card__list-item">Дети социализированы и успешно подготовлены к обучению в
+                        школе
+                    </li>
+                    <li class="directions-card__list-item">Улучшается эмоциональный фон и психологическое состояние в
+                        семьях
+                    </li>
+                    <li class="directions-card__list-item">10 школьников с ментальными особенностями развития обучаются
+                        по индивидуальным образовательным маршрутам в коррекционных классах детского Центра
+                    </li>
+                </ol>
             </div>
-
-            <!-- Step 3 -->
-            <div class="creation mb-4 md-md-5">
-                <img class="creation__img d-none d-md-block" src="{{ 'assets/images/book.png'|theme }}" width="250" height="250"
-                     alt="Книга">
-                <div class="creation__title mb-4" data-aos="fade-up">
-                    <span class="accent accent-wheat">Творчество</span> - это личность и уникальность вашего
-                    ребенка
-                </div>
-                <div class="creation-card">
-                    <div class="creation-card__title mb-2"><span class="text-yellow">2.</span> Творческий блок
-                    </div>
-                    <div class="creation-card__text">
-                        В творческой мастерской мы проводим творческий блок и курс Арт-студии. На творческом
-                        блоке
-                        мы занимаемся лепкой, изо-лепкой, декоративно- прикладным творчеством, рисованием,
-                        аппликацией. После каждого занятия детки выходят с уникальной поделкой
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="creation-studio">
-                <div class="accent accent-lg accent-primary mb-4" data-aos="fade-up">Творческая студия</div>
-                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="sport-gallery">
-                <img class="sport-gallery__img d-none d-md-block" src="{{ 'assets/images/target.png'|theme }}" width="250"
-                     height="250" alt="Цель">
-                <div class="accent accent-lg accent-primary z-1 mb-4" data-aos="fade-up">Спортивный зал</div>
-                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>
-                    </div>
-                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">
-                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="sport-description">
-                <img class="sport-description__img d-none d-md-block" src="{{ 'assets/images/planet.png'|theme }}" width="250"
-                     height="250"
-                     alt="Цель">
-                <div class="sport-description__title mb-4 md-md-5" data-aos="fade-up">
-                    <div class="accent accent-wheat">Инвестирование в спорт</div>
-                    - наилучшее вложение в развитие ребенка
-                </div>
-                <div class="sport-description-card z-1">
-                    <div class="sport-description-card__title mb-2">
-                        <span class="text-yellow">3.</span> спортивный блок
-                    </div>
-                    <div class="sport-description-card__text">
-                        В спортивном зале мы проводим блок, посвященный спорту. Здесь мы занимаемся ОФП с
-                        элементами растяжки, дзюдо, футбола, гимнастики, подвижными играми и упражнениями из
-                        направления "здоровая спина" и "здоровые ножки.
-                    </div>
-                </div>
+            <div class="directions-card">
+                <div class="directions-card__title">Группы детского Центра</div>
+                <ol class="directions-card__list">
+                    <li class="directions-card__list-item">Младшая группа 3-5 лет</li>
+                    <li class="directions-card__list-item">Старшая группа 5-7 лет</li>
+                    <li class="directions-card__list-item">Продленная группа школьников</li>
+                </ol>
             </div>
         </div>
 
-<!--        <button type="button" class="button button-lg button-yellow d-flex mx-auto mb-4 md-md-5"-->
-<!--                data-bs-toggle="modal"-->
-<!--                data-bs-target="#request-modal">Записаться на занятие-->
-<!--        </button>-->
+        <!--        <div class="directions__subtitle mb-4 md-md-5">-->
+        <!--            Комплексное занятие - это сразу три направления в рамках одного занятия. Каждый блок проходит в-->
+        <!--            своем пространстве и со своим педагогом-->
+        <!--        </div>-->
+
+        <!--        <div class="directions__grid pt-4 mb-4 md-md-5">-->
+        <!--            &lt;!&ndash; Step 1 &ndash;&gt;-->
+        <!--            <div class="intellect">-->
+        <!--                <div class="accent accent-lg accent-primary mb-4" data-aos="fade-up">-->
+        <!--                    Интеллектуальное пространство-->
+        <!--                </div>-->
+        <!--                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/1.jpg">-->
+        <!--                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/2.jpg">-->
+        <!--                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="/Facade/3.jpg">-->
+        <!--                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash; Step 2 &ndash;&gt;-->
+        <!--            <div class="brain">-->
+        <!--                <img class="d-none d-md-block mx-auto" src="{{ 'assets/images/brain.png'|theme }}" width="225" height="225"-->
+        <!--                     alt="Мозг"/>-->
+        <!--                <div class="brain-title mb-4 md-md-5" data-aos="fade-up">-->
+        <!--                    У пытливого детского ума - -->
+        <!--                    <div class="accent accent-wheat">перспективное будущее</div>-->
+        <!--                </div>-->
+        <!--                <div class="brain-card z-1">-->
+        <!--                    <div class="brain-card__title mb-2"><span class="text-yellow">1.</span> Раннее развитие и-->
+        <!--                        подготовка-->
+        <!--                        к школе-->
+        <!--                    </div>-->
+        <!--                    <div class="brain-card__text">-->
+        <!--                        <p class="mb-1">-->
+        <!--                            В интеллектуальном пространстве у нас проходит блок раннего развития для детей 2-3-->
+        <!--                            года-->
+        <!--                            и-->
+        <!--                            подготовки к школе для детей 5-7 лет.-->
+        <!--                        </p>-->
+        <!--                        <p class="mb-1">-->
+        <!--                            На <span class="fw-bolder">раннем развитии</span> мы занимаемся изучением-->
+        <!--                            окружающего-->
+        <!--                            мира и-->
+        <!--                            развитием речи, выполняем дидактические и нейрогимнастические упражнения, задания на-->
+        <!--                            логику.-->
+        <!--                        </p>-->
+        <!--                        <p class="mb-0">-->
+        <!--                            На <span class="fw-bolder">подготовке к школе</span> мы учимся считать, читать и-->
+        <!--                            писать,-->
+        <!--                            формируем усидчивость, развиваем память, работаем над развитием межполушарных-->
+        <!--                            связей,-->
+        <!--                            занимаемся нейрогимнастикой.-->
+        <!--                        </p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash; Step 3 &ndash;&gt;-->
+        <!--            <div class="creation mb-4 md-md-5">-->
+        <!--                <img class="creation__img d-none d-md-block" src="{{ 'assets/images/book.png'|theme }}" width="250" height="250"-->
+        <!--                     alt="Книга">-->
+        <!--                <div class="creation__title mb-4" data-aos="fade-up">-->
+        <!--                    <span class="accent accent-wheat">Творчество</span> - это личность и уникальность вашего-->
+        <!--                    ребенка-->
+        <!--                </div>-->
+        <!--                <div class="creation-card">-->
+        <!--                    <div class="creation-card__title mb-2"><span class="text-yellow">2.</span> Творческий блок-->
+        <!--                    </div>-->
+        <!--                    <div class="creation-card__text">-->
+        <!--                        В творческой мастерской мы проводим творческий блок и курс Арт-студии. На творческом-->
+        <!--                        блоке-->
+        <!--                        мы занимаемся лепкой, изо-лепкой, декоративно- прикладным творчеством, рисованием,-->
+        <!--                        аппликацией. После каждого занятия детки выходят с уникальной поделкой-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash; Step 4 &ndash;&gt;-->
+        <!--            <div class="creation-studio">-->
+        <!--                <div class="accent accent-lg accent-primary mb-4" data-aos="fade-up">Творческая студия</div>-->
+        <!--                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash; Step 5 &ndash;&gt;-->
+        <!--            <div class="sport-gallery">-->
+        <!--                <img class="sport-gallery__img d-none d-md-block" src="{{ 'assets/images/target.png'|theme }}" width="250"-->
+        <!--                     height="250" alt="Цель">-->
+        <!--                <div class="accent accent-lg accent-primary z-1 mb-4" data-aos="fade-up">Спортивный зал</div>-->
+        <!--                <div class="fancybox-default f-carousel carousel-frame carousel-frame-secondary">-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/1.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/1.jpg'|media }}" alt="1"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/2.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/2.jpg'|media }}" alt="2"/>-->
+        <!--                    </div>-->
+        <!--                    <div class="f-carousel__slide" data-fancybox="gallery" data-src="{{ 'Facade/3.jpg'|media }}">-->
+        <!--                        <img class="" src="{{ 'Facade/3.jpg'|media }}" alt="3"/>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash; Step 6 &ndash;&gt;-->
+        <!--            <div class="sport-description">-->
+        <!--                <img class="sport-description__img d-none d-md-block" src="{{ 'assets/images/planet.png'|theme }}" width="250"-->
+        <!--                     height="250"-->
+        <!--                     alt="Цель">-->
+        <!--                <div class="sport-description__title mb-4 md-md-5" data-aos="fade-up">-->
+        <!--                    <div class="accent accent-wheat">Инвестирование в спорт</div>-->
+        <!--                    - наилучшее вложение в развитие ребенка-->
+        <!--                </div>-->
+        <!--                <div class="sport-description-card z-1">-->
+        <!--                    <div class="sport-description-card__title mb-2">-->
+        <!--                        <span class="text-yellow">3.</span> спортивный блок-->
+        <!--                    </div>-->
+        <!--                    <div class="sport-description-card__text">-->
+        <!--                        В спортивном зале мы проводим блок, посвященный спорту. Здесь мы занимаемся ОФП с-->
+        <!--                        элементами растяжки, дзюдо, футбола, гимнастики, подвижными играми и упражнениями из-->
+        <!--                        направления "здоровая спина" и "здоровые ножки.-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        <button type="button" class="button button-lg button-yellow d-flex mx-auto mb-4 md-md-5"-->
+        <!--                data-bs-toggle="modal"-->
+        <!--                data-bs-target="#request-modal">Записаться на занятие-->
+        <!--        </button>-->
     </div>
 </section>
