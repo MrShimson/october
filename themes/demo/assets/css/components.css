@@ -863,6 +863,7 @@
 .employee-card__avatar {
     width: 200px;
     height: 200px;
+    aspect-ratio: 1 / 1;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 18px;
