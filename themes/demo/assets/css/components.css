@@ -1016,6 +1016,11 @@
     .accent-lg {
         font-size: 20px;
     }
+
+    .employee-card__avatar {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* SM */

@@ -11,7 +11,7 @@ meta_title = "Свято-Димитриевский детский центр | 
     <div class="management__list">
         {% for employee in employees.get %}
             <div class="employee-card">
-                <img class="employee-card__avatar" width="200" height="200" src="{{ employee.avatar|media }}" alt="Avatar">
+                <img class="employee-card__avatar" src="{{ employee.avatar|media }}" alt="Avatar">
                 <div class="employee-card__name">{{ employee.last_name }} {{ employee.first_name }}</div>
                 <div class="employee-card__position">{{ employee.position }}</div>
             </div>
