@@ -6,12 +6,20 @@ fields:
     first_name:
         label: First Name
         type: text
+        required: true
     last_name:
         label: Last Name
         type: text
+        required: true
     avatar:
         label: Avatar
         type: mediafinder
+        required: false
     position:
         label: Position
         type: text
+        required: true
+    order:
+        label: Order
+        type: number
+        required: true

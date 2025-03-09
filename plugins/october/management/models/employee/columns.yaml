@@ -14,10 +14,14 @@ columns:
     avatar:
         label: Avatar
         type: image
-        width: 75
-        height: 75
+        width: '75'
+        height: '75'
         sortable: false
     position:
         label: Position
         type: text
+        searchable: true
+    order:
+        label: Order
+        type: number
         searchable: true

@@ -28,6 +28,6 @@ class Employees extends ComponentBase
 
     public function get()
     {
-        return Employee::all();
+        return Employee::orderBy('order', 'asc')->get();
     }
 }

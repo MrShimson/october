@@ -2,3 +2,6 @@ v1.0.1: First version of Management
 v1.0.2:
     - Migrations
     - create_employees_table.php
+v1.0.3:
+    - Migrations
+    - add_order_column.php
