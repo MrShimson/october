@@ -5,7 +5,7 @@
         <div class="article-card__banner {{ bannerCss|default('') }}" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
     {% endif %}
     <div class="article-card__content">
-        <div class="article-card__date mb-1">{{ post.published_at_date|date('D.M.Y') }}</div>
+        <div class="article-card__date mb-1">{{ post.published_at_date|date('d-m-Y') }}</div>
         <div class="article-card__title mb-2">{{ post.title }}</div>
         <div class="article-card__text">{{ post.featured_text }}</div>
     </div>

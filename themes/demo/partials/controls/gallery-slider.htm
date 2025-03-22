@@ -1,0 +1,181 @@
+{% set galleryId = 'carousel' ~ random() %}
+{% set width = width|default(640) %}
+{% set height = height|default(640) %}
+
+<style>
+    .gallery-carousel {
+        width: 100%;
+        margin: 1.5rem 0 1.75rem; /* аккуратные отступы сверху и снизу */
+        border-radius: 16px;
+        position: relative;
+        overflow: visible;
+    }
+
+    .gallery-carousel .item {
+        padding: 0;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    .gallery-carousel .item img {
+        width: 100%;
+        height: 390px; /* увеличенная высота */
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-carousel .item img:hover {
+        transform: scale(1.01);
+    }
+
+    .gallery-carousel .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    .gallery-carousel .owl-nav .owl-prev,
+    .gallery-carousel .owl-nav .owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: all;
+        background: transparent;
+        color: #888;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-carousel .owl-nav .owl-prev:hover,
+    .gallery-carousel .owl-nav .owl-next:hover {
+        border-color: #333;
+        color: #333;
+    }
+
+    .gallery-carousel .owl-nav .owl-prev {
+        left: -44px;
+    }
+
+    .gallery-carousel .owl-nav .owl-next {
+        right: -44px;
+    }
+
+    .gallery-carousel .owl-nav i {
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .gallery-carousel .owl-dots {
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .gallery-carousel .owl-dot {
+        width: 8px;
+        height: 8px;
+        background: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 4px;
+        transition: background 0.3s ease;
+    }
+
+    .gallery-carousel .owl-dot.active {
+        background: #333;
+    }
+
+    @media (max-width: 576px) {
+        .gallery-carousel .item img {
+            height: 280px; /* также увеличено, но чуть скромнее на мобилке */
+            border-radius: 12px;
+        }
+
+        .gallery-carousel .owl-nav .owl-prev,
+        .gallery-carousel .owl-nav .owl-next {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            left: -36px;
+            right: -36px;
+        }
+    }
+</style>
+
+<div id="{{ galleryId }}" class="gallery-carousel owl-carousel">
+    {% if gallery %}
+    {% for image in gallery %}
+    <div class="item">
+        <div class="image-container">
+            <img src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}">
+            {% if image.title or image.description %}
+            <div class="caption">
+                <h3>{{ image.title }}</h3>
+                <p>{{ image.description }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for defaultImage in ['workspace', 'desktop', 'pancakes', 'doughnuts'] %}
+    {% set image = ('assets/images/stock/' ~ defaultImage ~ '.png')|theme %}
+    <div class="item">
+        <div class="image-container">
+            <a href="{{ image }}">
+                <img src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="Default Image">
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+<!-- jQuery (необходимо для работы Owl Carousel) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...обрезано..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#{{ galleryId }}").owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            navText: [
+                '<i class="fas fa-chevron-left"></i>',
+                '<i class="fas fa-chevron-right"></i>'
+            ]
+        });
+    });
+</script>

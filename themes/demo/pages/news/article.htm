@@ -1,7 +1,7 @@
 url = "/news/article/:slug/:id"
 layout = "default"
 title = "Новость"
-meta_title = "{{ blog.title }}"
+meta_title = "Свято-Димитриевский детский центр | {{ blog.title }}"
 
 [section post]
 handle = "Blog\Post"
@@ -19,13 +19,72 @@ vars[activeNavLink] = "blog"
 {% do redirect(''|page({ slug: post.slug }), 301) %}
 {% endif %}
 
+<style>
+    .card.card-post.card-primary {
+        background-color: #fff8e7;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: none;
+        padding: 3rem;
+        max-width: 960px;
+        margin: 0 auto;
+        font-size: 16px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card-title {
+        font-size: clamp(1.8rem, 2vw, 2.4rem);
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .card-body.card-lg {
+        padding: 0;
+    }
+
+    .card-meta {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 4rem; /* увеличенный отступ перед датой */
+    }
+
+    .card-meta .meta-item {
+        font-size: 0.95rem;
+        color: #777;
+    }
+
+    .blog-post-gallery {
+        margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .card.card-post.card-primary {
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+        }
+
+        .card-meta {
+            justify-content: center;
+        }
+    }
+</style>
+
 <div class="container py-4">
     <article class="card card-post card-primary">
-        {% if post.banner %}
-        <div class="card-banner banner-lg" style="background-image:url('{{ post.banner.path }}')"></div>
-        {% else %}
-        <div class="card-banner banner-lg" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
-        {% endif %}
+        <div class="blog-post-gallery">
+            {% partial 'controls/gallery-slider' gallery=post.gallery %}
+        </div>
 
         <div class="card-body card-lg">
             <h1 class="card-title">
@@ -38,24 +97,12 @@ vars[activeNavLink] = "blog"
             {{ post.content|content }}
             {% endif %}
 
-            {# <div class="blog-post-gallery">
-            {% partial 'controls/gallery-slider' gallery=post.gallery %}
-        </div> #}
-
-            <div class="row pt-3">
-                <div class="col-md-8">
-                    <div class="card-meta">
-                        <div class="meta-item text-icon text-icon-date">
-                            {{ post.published_at_date|date('j M Y') }}
-                        </div>
-                    </div>
+            <div class="card-meta">
+                <div class="meta-item text-icon text-icon-date">
+                    {{ post.published_at_date|date('d-m-Y') }}
                 </div>
-                {# <div class="col-md-4 text-end">
-                <div class="share-button">
-                    {% partial 'elements/share-button' %}
-                </div>
-            </div> #}
             </div>
         </div>
     </article>
 </div>
+
