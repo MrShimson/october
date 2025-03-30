@@ -908,6 +908,10 @@
         height: 260px;
     }
 
+    .article__gallery .fancybox-default {
+        height: 500px;
+    }
+
     .costs {
         padding: 150px 0;
     }
@@ -969,5 +973,7 @@
 
 /* SM */
 @media screen and (max-width: 576px) {
-
+    .article__gallery .fancybox-default {
+        height: 350px;
+    }
 }
