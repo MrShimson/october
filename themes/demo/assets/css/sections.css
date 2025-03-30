@@ -145,6 +145,7 @@
 }
 
 .hero__collapse-toggler {
+    position: relative;
     width: 100%;
     padding: 20px 18px;
     background-color: var(--white);
@@ -153,6 +154,25 @@
     color: var(--secondary);
     font-size: 20px;
     font-weight: bold;
+}
+
+.hero__collapse-toggler::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%) rotate(180deg);
+    background-image: url("/themes/demo/assets/images/icons/angle-up.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.15s ease-in-out;
+}
+
+.hero__collapse-toggler[aria-expanded="true"]::before {
+    transform: translateY(-50%) rotate(0deg);
 }
 
 .hero__collapse-content .hero__list {
