@@ -19,6 +19,10 @@ vars[activeNavLink] = "blog"
 {% do redirect(''|page({ slug: post.slug }), 301) %}
 {% endif %}
 
+{% set gallery = post.gallery %}
+{% set width = width|default(640) %}
+{% set height = height|default(640) %}
+
 <div class="container py-4">
     <article class="article">
         <h1 class="article__title">
@@ -33,8 +37,8 @@ vars[activeNavLink] = "blog"
         </div>
 
         <div class="article__gallery fancybox-default f-carousel carousel-frame carousel-frame-primary2">
-            {% for image in post.gallery %}
-                <div class="f-carousel__slide" data-fancybox="article" data-src="{{ 'Facade/1.jpg'|media }}">
+            {% for image in gallery %}
+                <div class="f-carousel__slide" data-fancybox="article" data-src="{{ image }}">
                     <img class="" src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}" />
                 </div>
             {% endfor %}
