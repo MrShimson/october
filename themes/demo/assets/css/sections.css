@@ -794,7 +794,7 @@
     }
 
     .hero {
-        padding: 40px 0 150px 0;
+        padding: 40px 0 80px 0;
     }
 
     .hero__inner {
@@ -847,8 +847,7 @@
     }
 
     .directions {
-        padding: 150px 0;
-        background-color: var(--pink);
+        padding: 40px 0;
     }
 
     .directions__logo {
