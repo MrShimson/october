@@ -561,7 +561,7 @@
 /* Article */
 .article {
     position: relative;
-    padding: 20px 16px;
+    padding: 24px 20px;
     background-color: var(--white);
     border-radius: 10px;
 }
@@ -960,6 +960,10 @@
 
     .management__list > div:last-child:nth-child(3n + 1) {
         grid-column: auto;
+    }
+
+    .article {
+        padding: 16px;
     }
 
     .footer {
