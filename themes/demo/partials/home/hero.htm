@@ -4,7 +4,7 @@
             <div>
                 <h1 class="h1 mb-2">Свято-Димитриевский</h1>
                 <div class="hero__subtitle mb-4 md-md-5">детский центр</div>
-                <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary mb-3 d-lg-none">
+                <div class="fancybox-default f-carousel mb-3 d-lg-none">
                     {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'] %}
                     {% for image in facadeImages %}
                     <div class="f-carousel__slide" data-fancybox="hero-1" data-src="{{ ('Facade/' ~ image)|media }}">
@@ -82,7 +82,7 @@
                 <!--                </div>-->
             </div>
             <div class="hero__slider-wrapper">
-                <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary">
+                <div class="fancybox-default f-carousel">
                     {% for image in facadeImages %}
                     <div class="f-carousel__slide" data-fancybox="hero-2" data-src="{{ ('Facade/' ~ image)|media }}">
                         <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>

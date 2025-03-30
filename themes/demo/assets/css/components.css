@@ -548,34 +548,9 @@
     background-color: var(--wheat);
 }
 
-.carousel-frame {
-    position: relative;
-}
-
-.carousel-frame::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    z-index: 1;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    pointer-events: none;
-}
-
-.carousel-frame-primary::before {
-    /*background-image: url("/themes/demo/assets/images/slider-bg-primary.png");*/
-}
-
-.carousel-frame-primary2::before {
-    /*background-image: url("/themes/demo/assets/images/slider-bg-primary2.png");*/
-}
-
-.carousel-frame-secondary::before {
-    /*background-image: url("/themes/demo/assets/images/slider-bg-secondary.png");*/
+.fancybox-default .f-carousel__slide {
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .fancybox-default .fancybox-default__image {
@@ -605,13 +580,29 @@
     display: none;
 }
 
+.fancybox-default .f-button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+
+.fancybox-default .f-button:hover {
+    background-color: var(--yellow);
+    opacity: .7;
+}
+
+.fancybox-default .f-button svg {
+    width: 16px;
+    height: 16px;
+}
+
 .fancybox-default.has-dots {
     margin-bottom: 0;
 }
 
-.fancybox-default .f-button,
-.fancybox-default .f-carousel__dots {
-    display: none;
+.fancybox-default .f-carousel__dot {
+    background-color: var(--primary);
 }
 
 .fancybox-default img {

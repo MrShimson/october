@@ -1,6 +1,6 @@
 class App {
     popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
-    carousels = document.querySelectorAll(".fancybox-default");
+    carousels = document.querySelectorAll('.fancybox-default');
     phoneInputs = document.querySelectorAll('input[type="tel"]');
     burgerFixed = document.querySelector('.burger-fixed');
 
@@ -16,7 +16,7 @@ class App {
     initPopovers() {
         this.popovers.forEach((popover) => {
             new bootstrap.Popover(popover);
-        })
+        });
     }
 
     initSliders() {
@@ -27,7 +27,8 @@ class App {
                 Autoplay: {
                     timeout: 3000,
                 },
-            }, { Autoplay });
+                Navigation: {}
+            }, {Autoplay});
         })
 
         Fancybox.bind("[data-fancybox]", {
@@ -37,7 +38,7 @@ class App {
 
     initPhoneMask() {
         this.phoneInputs.forEach((input) => {
-            IMask(input, { mask: '+{7}(000)000-00-00' });
+            IMask(input, {mask: '+{7}(000)000-00-00'});
         });
     }
 

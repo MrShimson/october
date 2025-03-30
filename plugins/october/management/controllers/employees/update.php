@@ -7,11 +7,9 @@
 
 <?php if (!$this->fatalError): ?>
 
-    <?= Form::open(['class' => 'd-flex flex-column h-100']) ?>
+    <?= Form::open(['class' => 'employee-form']) ?>
 
-        <div class="flex-grow-1">
-            <?= $this->formRender() ?>
-        </div>
+        <?= $this->makePartial('form-fields') ?>
 
         <div class="form-buttons">
             <div data-control="loader-container">
