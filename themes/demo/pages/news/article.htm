@@ -38,13 +38,15 @@ vars[activeNavLink] = "blog"
             {% endif %}
         </div>
 
-        <div class="article__gallery fancybox-default f-carousel carousel-frame carousel-frame-primary2">
-            {% for image in gallery %}
+        <div class="article__gallery">
+            <div class="fancybox-default f-carousel carousel-frame carousel-frame-primary2">
+                {% for image in gallery %}
                 <div class="f-carousel__slide" data-fancybox="article" data-src="{{ image|resize(maxWidth, maxHeight, { extension: 'png', mode: 'crop' }) }}">
                     <div class="fancybox-default__backdrop" style="background-image: url({{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }})"></div>
                     <img class="fancybox-default__image" src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}" />
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
 
         <div class="article__meta">
