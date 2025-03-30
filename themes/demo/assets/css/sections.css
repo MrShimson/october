@@ -541,6 +541,32 @@
 }
 
 /* Article */
+.article {
+    position: relative;
+    padding: 20px 16px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.article__title {
+    margin-bottom: 16px;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.article__meta {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.card-meta .meta-item {
+    font-size: 0.95rem;
+    color: rgb(1, 175, 171); /* цвет даты */
+}
+
 .article p {
     text-indent: 1.5em;
     font-size: 16px;
@@ -609,6 +635,10 @@
     column-gap: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.management__list > div:last-child:nth-child(3n + 1) {
+    grid-column: 2;
 }
 /* End of Management */
 
@@ -901,6 +931,10 @@
 
     .management__list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management__list > div:last-child:nth-child(3n + 1) {
+        grid-column: auto;
     }
 
     .footer {

@@ -19,96 +19,30 @@ vars[activeNavLink] = "blog"
 {% do redirect(''|page({ slug: post.slug }), 301) %}
 {% endif %}
 
-<style>
-    main.main {
-        background-color: rgb(250, 215, 74); /* тёплый фон для всей основной зоны */
-    }
-
-    .card.card-post.card-primary {
-        background-color: #ffffff; /* чисто белый фон карточки */
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: none;
-        padding: 3rem;
-        max-width: 960px;
-        margin: 0 auto;
-        font-size: 16px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeIn 0.6s ease-out forwards;
-        color: rgb(1, 175, 171); /* основной цвет текста */
-    }
-
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .card-title {
-        font-size: clamp(1.8rem, 2vw, 2.4rem);
-        font-weight: 700;
-        color: rgb(253, 140, 66); /* цвет заголовка */
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-
-    .card-body.card-lg {
-        padding: 0;
-    }
-
-    .card-meta {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 2rem; /* уменьшенный отступ от слайдера до даты */
-    }
-
-    .card-meta .meta-item {
-        font-size: 0.95rem;
-        color: rgb(1, 175, 171); /* цвет даты */
-    }
-
-    .blog-post-gallery {
-        margin: 2rem 1.5rem 0;
-    }
-
-    @media (max-width: 768px) {
-        .card.card-post.card-primary {
-            padding: 1.5rem 1rem;
-            border-radius: 12px;
-        }
-
-        .card-meta {
-            justify-content: center;
-        }
-
-        .blog-post-gallery {
-            margin: 2rem 0 2rem;
-        }
-    }
-</style>
-
 <div class="container py-4">
-    <article class="card card-post card-primary">
-        <div class="card-body card-lg">
-            <h1 class="card-title">
-                {{ post.title }}
-            </h1>
-
+    <article class="article">
+        <h1 class="article__title">
+            {{ post.title }}
+        </h1>
+        <div class="article__content">
             {% if post.entry_type == 'markdown_post' %}
-            {{ post.content|md|content }}
+                {{ post.content|md|content }}
             {% else %}
-            {{ post.content|content }}
+                {{ post.content|content }}
             {% endif %}
         </div>
 
-        <div class="blog-post-gallery">
-            {% partial 'controls/gallery-slider' gallery=post.gallery %}
+        <div class="article__gallery fancybox-default f-carousel carousel-frame carousel-frame-primary2">
+            {% for image in post.gallery %}
+                <div class="f-carousel__slide" data-fancybox="article" data-src="{{ 'Facade/1.jpg'|media }}">
+                    <img class="" src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}" />
+                </div>
+            {% endfor %}
+            <div class="article__gallery-item"></div>
         </div>
 
-        <div class="card-meta">
-            <div class="meta-item text-icon text-icon-date">
+        <div class="article__meta">
+            <div class="article__meta-item text-icon text-icon-date">
                 {{ post.published_at_date|date('d-m-Y') }}
             </div>
         </div>
