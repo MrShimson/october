@@ -22,6 +22,8 @@ vars[activeNavLink] = "blog"
 {% set gallery = post.gallery %}
 {% set width = width|default(640) %}
 {% set height = height|default(640) %}
+{% set maxWidth = maxWidth|default(1920) %}
+{% set maxHeight = maxHeight|default(1920) %}
 
 <div class="container py-4">
     <article class="article">
@@ -38,8 +40,9 @@ vars[activeNavLink] = "blog"
 
         <div class="article__gallery fancybox-default f-carousel carousel-frame carousel-frame-primary2">
             {% for image in gallery %}
-                <div class="f-carousel__slide" data-fancybox="article" data-src="{{ image }}">
-                    <img class="" src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}" />
+                <div class="f-carousel__slide" data-fancybox="article" data-src="{{ image|resize(maxWidth, maxHeight, { extension: 'png', mode: 'crop' }) }}">
+                    <div class="fancybox-default__backdrop" style="background-image: url({{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }})"></div>
+                    <img class="fancybox-default__image" src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="{{ image.title }}" />
                 </div>
             {% endfor %}
             <div class="article__gallery-item"></div>
