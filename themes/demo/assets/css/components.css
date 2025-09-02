@@ -787,9 +787,9 @@
 .article-card {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    box-shadow: 0 4px 5px 0 rgba(183, 183, 183, 0.2);
+    background-color: var(--white);
     transition: opacity .15s ease-in-out, box-shadow .15s ease-in-out;
-    border: 1px solid var(--primary);
     display: flex;
     flex-direction: column;
 }
@@ -820,10 +820,6 @@
     padding: 10px;
 }
 
-.article-card__date {
-    font-size: 12px;
-}
-
 .article-card__title {
     color: var(--primary);
     font-size: 18px;
@@ -831,7 +827,26 @@
 }
 
 .article-card__text {
-    color: var(--black);
+    color: var(--gray-600);
+}
+
+.article-card__footer {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--gray-200);
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card__author {
+    font-size: 12px;
+    color: var(--gray-400);
+}
+
+.article-card__date {
+    font-size: 12px;
+    color: var(--gray-400);
 }
 
 .document-preview {

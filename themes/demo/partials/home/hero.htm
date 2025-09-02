@@ -5,11 +5,14 @@
                 <h1 class="h1 mb-2">Свято-Димитриевский</h1>
                 <div class="hero__subtitle mb-4 md-md-5">детский центр</div>
                 <div class="fancybox-default f-carousel mb-5 d-lg-none">
-                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'] %}
+                    {% set facadeImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg',
+                    '9.jpg'] %}
                     {% for image in facadeImages %}
                     <div class="f-carousel__slide" data-fancybox="hero-1" data-src="{{ ('Facade/' ~ image)|media }}">
-                        <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
-                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
+                        <div class="fancybox-default__backdrop"
+                             style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
+                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}"
+                             alt="{{ loop.index }}"/>
                     </div>
                     {% endfor %}
                 </div>
@@ -19,11 +22,11 @@
                             Имеем 25-летний опыт воспитания детей и их успешной социализации в обществе
                         </li>
                         <li class="hero__list-item">
-                            С 2016 года помогает семьям в трудной жизненной ситуации, когда может возникнуть угроза
+                            С 2016 года помогаем семьям в трудной жизненной ситуации, когда может возникнуть угроза
                             изъятия ребенка из семьи
                         </li>
                         <li class="hero__list-item">
-                            Оказывает семьям комплексную помощь в социализации и развитии ребенка,
+                            Оказываем семьям комплексную помощь в социализации и развитии ребенка,
                             психолого-педагогическую и методическую помощь
                         </li>
                     </ul>
@@ -52,15 +55,13 @@
                     <div class="hero__collapse-content collapse" id="hero-collapse-2">
                         <ul class="hero__list">
                             <li class="hero__list-item">
-                                Присмотр и уход за дошкольниками в инклюзивных группах до 12 человек
+                                Присмотр и уход за дошкольниками в инклюзивных группах до 12 человек по будням с 8:30 до 18 час.
                             </li>
                             <li class="hero__list-item">
-                                По будням с 8:30 до 18:00 малокомплектные (до 10 человек) инклюзивные дошкольные группы
-                                дневного пребывания
+                                Развивающие и коррекционные занятия в группах неполного дня
                             </li>
                             <li class="hero__list-item">
-                                По потребности родителей (болезнь, необходимость госпитализации, отъезда, ночные дежурства
-                                одинокого родителя, другие обстоятельства) организация ночных групп
+                                По потребностям родителей (болезнь, необходимость госпитализации, отъезда, ночные дежурства одинокого родителя, другие обстоятельства) организация ночных групп для дошкольников и младших школьников
                             </li>
                         </ul>
                     </div>
@@ -81,8 +82,10 @@
                 <div class="fancybox-default f-carousel">
                     {% for image in facadeImages %}
                     <div class="f-carousel__slide" data-fancybox="hero-2" data-src="{{ ('Facade/' ~ image)|media }}">
-                        <div class="fancybox-default__backdrop" style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
-                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}" alt="{{ loop.index }}"/>
+                        <div class="fancybox-default__backdrop"
+                             style="background-image: url({{ ('Facade/' ~ image)|media }})"></div>
+                        <img class="fancybox-default__image" src="{{ ('Facade/' ~ image)|media }}"
+                             alt="{{ loop.index }}"/>
                     </div>
                     {% endfor %}
                 </div>
