@@ -30,4 +30,3 @@ nbproject
 /modules
 /.docker/mysql/dump/*
 !/.docker/mysql/dump/
-/.docker/nginx/prod/basic.auth
